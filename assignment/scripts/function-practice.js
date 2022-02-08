@@ -55,7 +55,7 @@ function isPositive( number ) {
 // Call the function to test each outcome (true & false)
 // Write a separate console.log statement for each outcome
 console.log( `isPositive - should say "true": ${isPositive(3)}` );
-//Using the template literal changes the output
+//Using the template literal changes the boolean to a string in the console
 console.log( 'isPositive - should say false', isPositive(0) );
 console.log( 'isPositive - should say false', isPositive(-3) );
 
@@ -63,30 +63,37 @@ console.log( 'isPositive - should say false', isPositive(-3) );
 // 6. Function to return the _last_ item in an array. If the
 // //    array is empty, return `undefined`.
 const animalSounds = ['meow','woof','tweet'];
+const emptyArray = []
 
 function getLast(item) {
-  const lastItem = array[ array.length - 1];
-  console.log(`inside getLast`);
-  return `the last item is ${lastItem}`;
-  if (array.length < 0) {
+  const lastItem = item[ item.length - 1];
+  console.log(`inside 'getLast': ${lastItem}`);
+  if (lastItem === 0) {
     return 'undefined';
   }
+    return lastItem;
 }//end getLast
-  //Oops of course this returns "tweet"=> console.log(`The last item is ${lastItem}`);
-
-console.log('NEED TO FIX QUESTION 6');
-//getlast(animalSounds)
-
-//trying to get this one to return "undefined"/ animalSounds = []
-//trying to get this one to return "undefined"/ getLast(animalSounds)
+  //Oops of course this prints "tweet" without actually invoking the function=> console.log(`The last item is ${lastItem}`);
+console.log(`The last sound is ${getLast(animalSounds)}`);
+console.log(`The empty array shows as ${getLast(emptyArray)}`);//I just wanted to invoke this function a with an empty array next to the animalSounds
 
 // 7. Function to find a value in an array. Return true if the
 //    value is found and false otherwise. Use a loop;
 //    DO NOT use Array.includes, Array.indexOf, or Array.find
 const fruits = ['apple','banana','orange','watermelon']
+
 function find( value, array ){
-  
+  let found = false;
+  for (i = 0; i < array.length; i++) {
+    if (array[i] == value){
+      found = true;
+    }
+  //console.log(found); this will show combinations of true and/or false as the loop iterates through the items in the array
+  }
+  return found;
 }//end find function
+console.log(`The value was found: ${find('watermelon',fruits)}`);
+console.log(`The value was found: ${find('monkey',fruits)}`);//Again, I just wanted to see them both
 
 
 // ----------------------
