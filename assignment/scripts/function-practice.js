@@ -9,17 +9,19 @@ function hello() {
   return 'Hello World!';
 }
 // Call the function to test
+
 console.log('Test - should say "Hello World!"', hello());
-hello ()
+
 
 // 2. Function to return an personalized hello, using the `name` argument.
 //    for example 'Hello, Jo!', or 'Hello, Stacy!'
 function helloName(name) {
-  console.log(`Hello ${name}!`);
+    return `Hello ${name}!`;
+  //(`Hello ${name}!`);
   //let name = 'Isidore' --no, don't need to declare this
   //return 'hello ' + name + "!"; --possible to set up like this but also not really needed
 }
-helloName('Usidore')
+console.log (helloName('Usidore'));
 
 // Remember to call the function to test
 
@@ -87,13 +89,13 @@ function find( value, array ){
   for (i = 0; i < array.length; i++) {
     if (array[i] == value){
       found = true;
-    }
-  //console.log(found); this will show combinations of true and/or false as the loop iterates through the items in the array
-  }
+    }//end true?
+  //console.log(found); <=this will log combinations of true and/or false each time as the loop iterates through the items in the array
+}//end looping?
   return found;
-}//end find function
-console.log(`The value was found: ${find('watermelon',fruits)}`);
-console.log(`The value was found: ${find('monkey',fruits)}`);//Again, I just wanted to see them both
+}//end find
+console.log(`'Watermelon' was found: ${find('watermelon',fruits)}`);
+console.log(`'Monkey' was found: ${find('monkey',fruits)}`);//Again, I just wanted to see them both
 
 
 // ----------------------
