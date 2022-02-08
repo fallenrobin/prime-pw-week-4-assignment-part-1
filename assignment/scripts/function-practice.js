@@ -19,7 +19,8 @@ function helloName(name) {
   //let name = 'Isidore' --no, don't need to declare this
   //return 'hello ' + name + "!"; --possible to set up like this but also not really needed
 }
-helloName('Isidore')
+helloName('Usidore')
+
 // Remember to call the function to test
 
 
@@ -60,27 +61,33 @@ console.log( 'isPositive - should say false', isPositive(-3) );
 
 
 // 6. Function to return the _last_ item in an array. If the
-//    array is empty, return `undefined`.
-function getLast( array ) {
-  console.log(array.length - 1);
-  exampleArray = [0,1,2,3]
-}
+// //    array is empty, return `undefined`.
+const animalSounds = ['meow','woof','tweet'];
+
+function getLast(item) {
+  const lastItem = array[ array.length - 1];
+  console.log(`inside getLast`);
+  return `the last item is ${lastItem}`;
+  if (array.length < 0) {
+    return 'undefined';
+  }
+}//end getLast
+  //Oops of course this returns "tweet"=> console.log(`The last item is ${lastItem}`);
+
+console.log('NEED TO FIX QUESTION 6');
+//getlast(animalSounds)
+
+//trying to get this one to return "undefined"/ animalSounds = []
+//trying to get this one to return "undefined"/ getLast(animalSounds)
 
 // 7. Function to find a value in an array. Return true if the
 //    value is found and false otherwise. Use a loop;
 //    DO NOT use Array.includes, Array.indexOf, or Array.find
+const fruits = ['apple','banana','orange','watermelon']
 function find( value, array ){
-  // console.log(``);
-  // for (var i = 0; i < array.length; i++) {
-  //   if (value===3)
-  //   return true;
-  //   else {
-  //     return false;
-  //   }{
-  //   }//end return true
-  // }//end for loop
+  
 }//end find function
-find(3, array)
+
 
 // ----------------------
 // Stretch Goals
