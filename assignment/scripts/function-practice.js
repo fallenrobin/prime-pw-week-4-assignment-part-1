@@ -64,21 +64,25 @@ console.log( 'isPositive - should say false', isPositive(-3) );
 
 // 6. Function to return the _last_ item in an array. If the
 // //    array is empty, return `undefined`.
-const animalSounds = ['meow','woof','tweet'];
+//const animalSounds = ['meow','woof','tweet'];
 const emptyArray = []
+const animalSounds = ['meow','woof','tweet']
 
-function getLast(item) {
-  const lastItem = item[ item.length - 1];
+function getLast(array) {
+  const lastItem = array[ array.length - 1];
   console.log(`inside 'getLast': ${lastItem}`);
   if (lastItem === 0) {
     return 'undefined';
-  }
+  }//So I learned that this If conditional is not necessary; the array returns as undefined by itself
     return lastItem;
 }//end getLast
   //Oops of course this prints "tweet" without actually invoking the function=> console.log(`The last item is ${lastItem}`);
 console.log(`The last sound is ${getLast(animalSounds)}`);
 console.log(`The empty array shows as ${getLast(emptyArray)}`);//I just wanted to invoke this function a with an empty array next to the animalSounds
-
+getLast(animalSounds);
+// function getLast( array ) {
+//   return array[array.length-1];
+// }//Note to self: This was Maggie's solution which makes sense and is more succinct
 // 7. Function to find a value in an array. Return true if the
 //    value is found and false otherwise. Use a loop;
 //    DO NOT use Array.includes, Array.indexOf, or Array.find
