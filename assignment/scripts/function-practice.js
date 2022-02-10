@@ -80,9 +80,12 @@ function getLast(array) {
 console.log(`The last sound is ${getLast(animalSounds)}`);
 console.log(`The empty array shows as ${getLast(emptyArray)}`);//I just wanted to invoke this function a with an empty array next to the animalSounds
 getLast(animalSounds);
+
 // function getLast( array ) {
 //   return array[array.length-1];
-// }//Note to self: This was Maggie's solution which makes sense and is more succinct
+// }
+//Note to self: This^ was Maggie's solution which makes sense and is more succinct
+
 // 7. Function to find a value in an array. Return true if the
 //    value is found and false otherwise. Use a loop;
 //    DO NOT use Array.includes, Array.indexOf, or Array.find
@@ -114,17 +117,42 @@ console.log( 'isFirstLetter - should say true', isFirstLetter('a', 'apple') );
 console.log( 'isFirstLetter - should say false', isFirstLetter('z', 'apple') );
 
 // 9. Function to return the sum of all numbers in an array
-function sumAll( ) {
-  let sum = 0
+let numberArray = [2,2,2,2,2];
+
+function sumAll(numbers) {
+  let sum = 0;
+  for (i = 0; i < numbers.length; i++);
   // TODO: loop to add items
-  return sum;
+  //sum = numbers.reduce; Nope
+  //numbers.reduce = sum; Nope
+  //sum += numbers[i]; Nope
+  //sum = numbers.reduce[i]; Nope
+  //sum.push(numbers); No this seems like a super redundant step... the numbers are already in an array!
+  console.log(`inside sumAll`, numbers);//testing
+  sum += numbers;//***this makes array items visible in test log, otherwise empty***
+  //return sum.reduce;
+  return sum;//***this makes array items visible in test log, otherwise Undefined***
 }
+console.log(`test log; should be 10: ${sumAll(numberArray)}`);
+sumAll(numberArray);
 
 // 10. Function to return a new array of all positive (greater than zero)
 //     numbers contained in an input array. If there are no positive numbers
 //     return an empty array. Note: The input array should not change.
+let manyNumbers = [1,2,3,4,5,6,7,8,9,10];
+let evenNumberArray = [];
 
-
+// function evenNumbers( value, array ){
+//   //console.log(`inside evenNumbers`);- just for testing purposes
+// //   for (i = 0; i < array.length; i++)
+// //   //if ([value]%2=0) {
+// //     value.push();
+// //   }//end if
+// //   //return value;
+// //   //return true;- just for testing purposes
+// // }//end evenNumbers
+// // //console.log(`should say true: ${evenNumbers(manyNumbers)}`); - just for testing purposes
+// // evenNumbers(manyNumbers);
 
 // 11. Pick a problem from Edabit(https://edabit.com/) or
 //     CodeWars(https://www.codewars.com/). Then describe it
