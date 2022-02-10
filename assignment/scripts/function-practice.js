@@ -104,14 +104,18 @@ function find( value, array ){
 console.log(`'Watermelon' was found: ${find('watermelon',fruits)}`);
 console.log(`'Monkey' was found: ${find('monkey',fruits)}`);//Again, I just wanted to see them both
 
-
 // ----------------------
 // Stretch Goals
 // ----------------------
 // 8. Function to check if a letter is the first letter in a
 //    string. Return true if it is, and false otherwise
 function isFirstLetter(letter, string) {
-
+  //letter = string.charAt(0); No, redundant! duh
+  if (letter == string.charAt(0)){ //error "unexpected identifier"
+  console.log(`Test: inside isFirstLetter`);
+  return true;
+    }
+  return false;
 }
 console.log( 'isFirstLetter - should say true', isFirstLetter('a', 'apple') );
 console.log( 'isFirstLetter - should say false', isFirstLetter('z', 'apple') );
