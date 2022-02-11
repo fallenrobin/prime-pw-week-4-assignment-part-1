@@ -150,7 +150,7 @@ function positiveNumbers( array ){
   //console.log(`inside positiveNumbers`);- just for testing purposes
   for (i = 0; i < array.length; i++){
     if (array[i] > 0){
-    positiveArray.push(array[i]);
+    positiveArray.push( array[i] );
     //console.log(`${positiveArray}`); shows values as they accumulate (as they are pushed)
       }//end if statement
     }//end for loop
@@ -162,3 +162,38 @@ console.log(`should show positiveNumbers: ${positiveNumbers(mixedNumbers)}`);
 // 11. Pick a problem from Edabit(https://edabit.com/) or
 //     CodeWars(https://www.codewars.com/). Then describe it
 //     here in a comment, write the function, and test it!
+
+//"Filter out Strings from an Array"
+//Problem: Create a function that takes an array of non-negative integers and strings and return a new array without the strings.
+
+// Examples
+// filterArray([1, 2, "a", "b"]) ➞ [1, 2]
+//
+// filterArray([1, "a", "b", 0, 15]) ➞ [1, 0, 15]
+//
+// filterArray([1, 2, "aasf", "1", "123", 123]) ➞ [1, 2, 123]
+
+// Notes
+// Zero is a non-negative integer.
+// The given array only has integers and strings.
+// Numbers in the array should not repeat.
+// The original order must be maintained.
+let wackyArray = [0,'kazoo',21,'pie',64000,'shenanigans'];
+let positiveIntegers = [];
+
+function filterArray( array ){
+  for (var i = 0; i < array.length; i++) {
+    if (Number.isInteger(array[i])) {
+    //console.log(`after if`);
+    positiveIntegers.push((array[i]));
+    //console.log(`after for`);
+    }//end if statement
+  }//end for loop
+  return positiveIntegers;
+}//end filterArray
+
+//console.log(`this one should be converted to strings: ${filterArray(wackyArray)}`);
+//***Why does the above log make the positiveIntegers integers array have the same values twice??!
+console.log(filterArray(wackyArray));
+console.log(positiveIntegers);
+console.log(wackyArray);
