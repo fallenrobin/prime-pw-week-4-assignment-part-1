@@ -125,38 +125,39 @@ let numberArray = [2,2,2,2,2];
 
 function sumAll(numbers) {
   let sum = 0;
-  for (i = 0; i < numbers.length; i++);
+  for (i = 0; i < numbers.length; i++){//I was missing these curly braces and it drove me crazy!
   // TODO: loop to add items
   //sum = numbers.reduce; Nope
   //numbers.reduce = sum; Nope
-  //sum += numbers[i]; Nope
+  //sum += numbers[i]; Nope <=YES THIS WAS RIGHT LOL (some other syntax was wrong)
   //sum = numbers.reduce[i]; Nope
   //sum.push(numbers); No this seems like a super redundant step... the numbers are already in an array!
-  console.log(`inside sumAll`, numbers);//testing
-  sum += numbers;//***this makes array items visible in test log, otherwise empty***
-  //return sum.reduce;
+  //console.log(`inside sumAll`, numbers);//(prints 5x as it iterates)
+  sum += numbers[i];//***this makes array items visible in test log, otherwise empty***
+  }//return sum.reduce;
   return sum;//***this makes array items visible in test log, otherwise Undefined***
 }
-console.log(`test log; should be 10: ${sumAll(numberArray)}`);
+console.log(`test log; should be 10:`,sumAll([2,2,2,2,2]));
 sumAll(numberArray);
 
 // 10. Function to return a new array of all positive (greater than zero)
 //     numbers contained in an input array. If there are no positive numbers
 //     return an empty array. Note: The input array should not change.
-let manyNumbers = [1,2,3,4,5,6,7,8,9,10];
-let evenNumberArray = [];
+let mixedNumbers = [-1,0,5,10];
+let positiveArray = [];
 
-// function evenNumbers( value, array ){
-//   //console.log(`inside evenNumbers`);- just for testing purposes
-// //   for (i = 0; i < array.length; i++)
-// //   //if ([value]%2=0) {
-// //     value.push();
-// //   }//end if
-// //   //return value;
-// //   //return true;- just for testing purposes
-// // }//end evenNumbers
-// // //console.log(`should say true: ${evenNumbers(manyNumbers)}`); - just for testing purposes
-// // evenNumbers(manyNumbers);
+function positiveNumbers( array ){
+  //console.log(`inside positiveNumbers`);- just for testing purposes
+  for (i = 0; i < array.length; i++){
+    if (array[i] > 0){
+    positiveArray.push(array[i]);
+    //console.log(`${positiveArray}`); shows values as they accumulate (as they are pushed)
+      }//end if statement
+    }//end for loop
+    return positiveArray;
+  }//end positiveNumbers
+console.log(`should show positiveNumbers: ${positiveNumbers(mixedNumbers)}`);
+
 
 // 11. Pick a problem from Edabit(https://edabit.com/) or
 //     CodeWars(https://www.codewars.com/). Then describe it
