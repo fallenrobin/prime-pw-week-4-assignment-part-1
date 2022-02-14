@@ -191,9 +191,12 @@ function filterArray( array ){
   }//end for loop
   return positiveIntegers;
 }//end filterArray
-
-//console.log(`this one should be converted to strings: ${filterArray(wackyArray)}`);
-//***Why does the above log make the positiveIntegers integers array have the same values twice??!
 console.log(filterArray(wackyArray));
+
+console.log(`this one should be converted to strings: ${filterArray(wackyArray)}`);
+//***Update: figured it out// Why does the above log make the positiveIntegers integers array have the same values twice??!
 console.log(positiveIntegers);
 console.log(wackyArray);
+console.log(filterArray(wackyArray));
+//Takeaway: As written, everytime the function is called it will ALWAYS push to positiveIntegers, which will store/accumulate all the values. So it will grow and grow, and in this case always be the same filtered values from wackyArray. So a solution could be to empty positiveIntegers BEFORE pushing to it!!
+//Another takeaway! It might be handy to have an array that continually accumulates those pushed values, depending on its purpose.
